@@ -2,8 +2,7 @@
   "name": "to-do-app",
   "version": "1.0.0",
   "description": "In this project, we will learn how to create a to-do-app that uses local storage to store the data",
-  "private":"true",
-  
+  "private": "true",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,7 +18,13 @@
   },
   "homepage": "https://github.com/sameer-98/to-do-app#readme",
   "devDependencies": {
+    "eslint": "^8.25.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "date-fns": "^2.29.3"
   }
 }

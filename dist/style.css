@@ -92,7 +92,7 @@ div.projects > button {
   flex-wrap: wrap;
 }
 
-.projectHeading {
+#projectHeading {
   text-transform: capitalize;
   margin-bottom: 0.75em;
   font-size: 2rem;
@@ -109,7 +109,7 @@ div.projects > button {
 .addTask:hover {
   color: black;
 }
-.taskDisplayContainer {
+#taskDisplayContainer {
   width: 80%;
   height: 80%;
   display: flex;

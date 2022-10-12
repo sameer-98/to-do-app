@@ -1,1 +1,3 @@
-console.log('hello webpack')
+import loadHomePage from './modules/controller';
+
+loadHomePage();
