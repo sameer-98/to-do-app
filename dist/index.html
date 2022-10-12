@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img src="./Icons/checkbox-marked-circle-plus-outline.png" alt="" />
+        <h1 class="title">Todo List</h1>
+      </header>
+      <div class="sidebar">
+        <div class="navs">
+          <button class="btn projectBtn btn-active" id="inbox">
+            <span
+              class="iconify icon icon-small"
+              data-icon="mdi-inbox"
+              style="color: blue"
+            ></span
+            >Inbox
+          </button>
+          <button class="btn projectBtn" id="today">
+            <span
+              class="iconify icon icon-small"
+              data-icon="mdi-calendar-today-outline"
+              style="color: darkgreen"
+            ></span
+            >Today
+          </button>
+          <button class="btn projectBtn" id="week">
+            <span
+              class="iconify icon icon-small"
+              data-icon="mdi-calendar-month-outline"
+              style="color: purple"
+            ></span>
+            This Week
+          </button>
+        </div>
+        <div class="projects">
+          <h2>Projects</h2>
+          <button class="btn addProjects">
+            <span
+              class="iconify icon icon-large"
+              data-icon="mdi-folder-plus-outline"
+              style="color: rgb(228, 66, 50)"
+            ></span>
+            Add Projects
+          </button>
+        </div>
+      </div>
+      <main id="main"></main>
+      <footer class="footer">
+        <p>Copyright © 2022 desi-angel</p>
+        <a href="https://github.com/desi-angel">
+          <a href="https://github.com/desi-angel"
+            ><img src="./Icons/github.png" class="github"
+          /></a>
+        </a>
+        <script src="//code.iconify.design/1/1.0.6/iconify.min.js"></script>
+      </footer>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>

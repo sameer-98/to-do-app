@@ -1,0 +1,294 @@
+@font-face {
+  font-family: "MyFont";
+  src: url(./GraphikRegular.otf) format("opentype");
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  font-size: 16px;
+  --ls-1: 2rem;
+  --ls-2: 5rem;
+  --clr-hero: rgb(228, 66, 50);
+  --clr-sidebar: #eeeeee;
+  --icon-small: 24px;
+  --icon-large: 36px;
+  --current-clr: red;
+}
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-rows: minmax(50px, auto) 1fr minmax(50px, auto);
+  grid-template-columns: 1fr 5fr;
+  font-family: "MyFont";
+}
+/* Header Design */
+.header {
+  grid-column: 1 / 3;
+  padding: 2em;
+  display: flex;
+  background-color: var(--clr-hero);
+  color: white;
+  gap: 0.2em;
+}
+.title {
+  display: flex;
+  align-items: center;
+}
+/* Sidebar Design */
+.sidebar {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  padding: 1.2em;
+  background-color: var(--clr-sidebar);
+}
+.btn {
+  display: block;
+  border: none;
+  width: 95%;
+  font-size: 16px;
+  font-family: "MyFont";
+  text-align: justify;
+  cursor: pointer;
+  padding: 0.5em;
+  border-radius: 10px;
+}
+.btn:hover {
+  background-color: #e0e0e0;
+}
+.btn-active {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+.icon-small {
+  width: var(--icon-small);
+  height: var(--icon-small);
+}
+.icon-large {
+  width: var(--icon-large);
+  height: var(--icon-large);
+}
+.icon {
+  margin-right: 0.75em;
+}
+div.projects > h2 {
+  margin-top: 1em;
+  margin-bottom: 0.75em;
+}
+div.projects > button {
+  /* margin-bottom: 1.2em; */
+}
+/* Main Area Design */
+#main {
+  grid-column: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-around;
+  flex-wrap: wrap;
+}
+
+.projectHeading {
+  text-transform: capitalize;
+  margin-bottom: 0.75em;
+  font-size: 2rem;
+}
+
+.addTask {
+  color: grey;
+  display: flex;
+  align-items: center;
+  gap: 0.1em;
+  cursor: pointer;
+}
+
+.addTask:hover {
+  color: black;
+}
+.taskDisplayContainer {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+/* Form Design */
+.formBox {
+  padding: 1em;
+  border: 1px solid var(--clr-hero);
+  border-radius: 15px;
+  width: 50%;
+  display: grid;
+  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr;
+}
+input[type="text"] {
+  grid-column: 1 / 7;
+  border: none;
+  font-size: 1rem;
+  font-family: "MyFont";
+  padding: 0.5em;
+}
+input[type="text"]:focus {
+  outline: none;
+}
+.submit {
+  grid-column: 5 / 6;
+}
+.discard {
+  grid-column: 6 / 7;
+}
+
+.footer {
+  grid-column: 1 / 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  font-size: 18px;
+  background-color: var(--clr-hero);
+  color: white;
+  font-family: "MyFont";
+}
+.github {
+  width: var(--ls-1);
+}
+input[type="date"] {
+  text-decoration: none;
+}
+.popup {
+  padding: 0.3em;
+  font-family: "MyFont";
+  font-size: 16px;
+  display: flex;
+  gap: 0.5em;
+  cursor: pointer;
+}
+/* Modal Design */
+.modal {
+  display: block;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modalContent {
+  background-color: #fefefe;
+  margin: 10% auto;
+  width: 25%;
+  height: 60%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+.modalHeader {
+  background-color: #eeeeee;
+  font-size: 1.2rem;
+  font-family: "MyFont";
+  padding: 1.25em;
+  font-weight: bold;
+  border-bottom: 1px solid #bdbdbd;
+}
+.projectForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-family: "MyFont";
+  padding: 1.25em;
+  border-bottom: 1px solid #bdbdbd;
+  height: 75%;
+}
+.projectForm input {
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  width: 100%;
+}
+.projectForm input:focus {
+  border: 1px solid #757575;
+}
+label {
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  display: block;
+}
+.modalFooter {
+  padding: 1.25em;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+}
+.modalBtn {
+  font-family: "MyFont";
+  font-size: 1rem;
+  padding: 0.5em;
+  font-weight: bold;
+  width: 5em;
+  border: 1px solid #bdbdbd;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.newProjectBtn {
+  background-color: var(--clr-hero);
+  color: var(--clr-sidebar);
+}
+.colors {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--current-clr);
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em;
+  border-radius: 50%;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  height: 0.65em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+}
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+input[type="radio"]:focus {
+  outline: max(2px, 0.15em) solid #757575;
+  outline-offset: max(2px, 0.15em);
+}
+#notes {
+  font-family: "MyFont";
+  padding: 0.5em;
+  font-size: 1rem;
+}
+.customProjects {
+  display: flex;
+  gap: 10px;
+}
+.colorIcon {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
