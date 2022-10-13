@@ -1,14 +1,14 @@
 import { format } from 'date-fns';
 
-const todos = (name, description, priority, dueDate) => {
+const todos = (taskObj) => {
   // returns name of todo
-  const getName = () => name;
+  const getName = () => taskObj.title;
   // returns priority of todo
-  const getPriority = () => priority;
+  const getPriority = () => taskObj.priority;
   // returns due date of todo
-  const getDueDate = () => dueDate;
+  const getDueDate = () => taskObj.dueDate;
   // returns formatted due date
-  const getFormattedDate = () => format(new Date(dueDate), 'MM/dd/yyyy');
+  const getFormattedDate = () => format(new Date(taskObj.dueDate), 'MM/dd/yyyy');
 
   return {
     getName, getPriority, getDueDate, getFormattedDate,

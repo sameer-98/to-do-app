@@ -1,3 +1,4 @@
+import { isThisWeek, isToday } from 'date-fns';
 import todos from './todo';
 
 const project = (name) => {
@@ -15,8 +16,8 @@ const project = (name) => {
   };
 
   // add new tasks
-  const addNewTask = (title, description, priority, dueDate) => {
-    tasks.push(todos(title, description, priority, dueDate));
+  const addNewTask = (taskObj) => {
+    if (!containsTask(taskObj.title)) { tasks.push(todos(taskObj)); }
   };
 
   // delete tasks
@@ -24,8 +25,14 @@ const project = (name) => {
     tasks.filter((task) => task.getName() !== taskName);
   };
 
+  // get today task from this project
+  const getTodayTasks = () => tasks.filter((task) => isToday(new Date(task.getFormattedDate())));
+
+  // get weeks task from this project
+  const getWeekTasks = () => tasks.filter((task) => isThisWeek(new Date(task.getFormattedDate())));
+
   return {
-    getTasks, getName, containsTask, addNewTask, deleteTask,
+    getTasks, getName, containsTask, addNewTask, deleteTask, getTodayTasks, getWeekTasks,
   };
 };
 export default project;
