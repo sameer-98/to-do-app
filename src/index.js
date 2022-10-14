@@ -1,3 +1,3 @@
-import loadHomePage from './modules/controller';
+import controller from './modules/controller';
 
-loadHomePage();
+controller();

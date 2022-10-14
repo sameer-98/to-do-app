@@ -9,11 +9,9 @@ projects.push(project('week'));
 const getProjects = () => projects;
 
 // Return a project
-const getProject = (projectName) => {
-  projects.find((proj) => proj.getName() === projectName);
-};
+const getProject = (projectName) => projects.find((proj) => proj.getName() === projectName);
 
-// Return list of tasks of a project TODO: update the projects
+// Return list of tasks of a project
 const getTaskList = (projectName) => getProject(projectName).getTasks();
 
 // Getting data from the form and storing in the respective project
@@ -49,7 +47,8 @@ const createProject = () => {
 const updateTodayTasks = () => {
   projects.forEach((proj) => {
     if (!proj.getName() === 'today') {
-      getProject('today').addNewTask(...proj.getTodayTasks);
+      const todayTasks = proj.getTodayTasks();
+      todayTasks.forEach((task) => getProject('today').addNewTask(task));
     }
   });
 };
@@ -58,16 +57,24 @@ const updateTodayTasks = () => {
 const updateWeekTasks = () => {
   projects.forEach((proj) => {
     if (!(proj.getName() === 'today' && proj.getName() === 'week')) {
-      getProject('week').addNewTask(...proj.getWeekTask);
+      const weekTasks = proj.getWeekTasks();
+
+      weekTasks.forEach((task) => getProject('week').addNewTask(task));
     }
   });
-  getProject('week').sort((taskA, taskB) => compareAsc(
+  getProject('week').getTasks().sort((taskA, taskB) => compareAsc(
     new Date(taskA.getFormattedDate()),
     new Date(taskB.getFormattedDate()),
   ));
 };
 
+// update inbox
+const updateInbox = () => {
+  const inbox = [...getProject('today').getTasks(), ...getProject('week').getTasks()];
+  inbox.forEach((task) => getProject('inbox').addNewTask(task));
+};
+
 export {
   getProjects, getProject, getTaskList, createTask, createProject,
-  updateTodayTasks, updateWeekTasks,
+  updateTodayTasks, updateWeekTasks, updateInbox,
 };

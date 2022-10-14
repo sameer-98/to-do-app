@@ -168,6 +168,10 @@ input[type="date"] {
   gap: 0.5em;
   cursor: pointer;
 }
+.taskName{
+  flex-grow: 2;
+}
+
 /* Modal Design */
 .modal {
   display: block;
